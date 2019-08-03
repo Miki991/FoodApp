@@ -1,0 +1,343 @@
+/* GENERAL */
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #666;
+	font-family: Helvetica, serif;
+	font-size: 16px;
+    background: linear-gradient(to right, 
+    rgba(73, 42, 21, 0.7),  
+    rgba(73, 42, 21, 0.7)), 
+    url('../img/sallad.jpeg') center/cover fixed no-repeat;
+}
+
+.wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+h1 {
+	margin-bottom: 50px;
+	color: #7aca25;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+h1::first-letter {
+	color: orange;
+}
+
+* {
+	box-sizing: border-box;
+	outline: none;
+}
+
+/* HEADER */
+
+header {
+	position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.2);
+    background-color: #fff;
+    z-index: 999;
+}
+
+header .wrapper {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+	display: inline-block;
+	margin: 10px 0;
+	color: #7aca25;
+    font-family: Helvetica;
+    font-size: 34px;
+    text-decoration: none;
+}
+
+#logo::first-letter {
+	color: orange;
+}
+
+.recipe-count {
+    display: flex;
+    align-items: center;
+}
+
+.recipe-count-number {
+	color: orange;
+	font-size: 24px;
+}
+
+.recipe-count-label {
+    margin-left: 10px;
+	color: #666;
+	font-size: 12px;
+} 
+
+/* MAIN */
+
+main {
+	max-width: 1000px;
+	margin: 120px auto 60px;
+	padding: 30px 20px;
+	background-color: rgba(255, 255, 255, .9);
+}
+
+.loader {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin: 25px 0;
+}
+
+.loader img {
+    display: block;
+    height: 60px;
+	width: 60px;
+}
+
+#food-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#food-form input,
+#food-form select {
+	width: 100%;
+    max-width: 600px;
+    height: 44px;
+    margin-bottom: 30px;
+    padding: 5px 10px;
+    color: #666;
+    font-size: 16px;
+    -webkit-appearance: none;
+    border: solid 1px #ccc;
+    border-radius: 0;
+}
+
+#food-form select {
+    background-image: url('../img/arrow.png');
+    background-size: 13px;
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+#food-form .calories-wrapper {
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#food-form .calories-wrapper input.calories-min,
+#food-form .calories-wrapper input.calories-max {
+    width: 45%;
+}
+
+#food-form button {
+    padding: 10px 25px;
+    background-color: orange;
+    border: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+#food-form button:hover {
+	opacity: .8;
+}
+
+#food-form button:disabled {
+    opacity: .5;
+    cursor: default;
+}
+
+#recipes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.recipe-element {
+	position: relative;
+    width: 22%;
+    margin-right: 4%;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.recipe-element h3 {
+	font-size: 15px;
+}
+
+.recipe-element:nth-child(4n) {
+	margin-right: 0;
+}
+
+.recipe-element img {
+	display: block;
+    max-width: 100%;
+}
+
+.recipe-element .calories {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    right: 10px;
+    background: rgb(122, 202, 37);
+    color: #fff;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+}
+
+.recipe-element .labels {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.recipe-element .labels .label {
+	margin-right: 5px;
+	margin-bottom: 5px;
+	padding: 2px 5px;
+	background: #fff;
+    color: orange;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+main div.on-error {
+    display: none;
+    width: 600px;
+    margin: 50px auto 100px;
+    padding: 50px 0;
+    border: 5px dotted rgb(122, 202, 37); 
+    text-align: center;
+    font-size: 20px;
+}
+
+/* PLACEHOLDER STYLE */
+
+*::-webkit-input-placeholder { 
+  text-transform: uppercase;
+  color: #ccc;
+}
+
+*::-moz-placeholder {
+  text-transform: uppercase;
+  color: #ccc;
+}
+
+*:-ms-input-placeholder {
+  text-transform: uppercase;
+  color: #ccc;
+}
+
+*:-moz-placeholder { 
+  text-transform: uppercase;
+  color: #ccc;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+
+
+/* PAGINATION */
+
+main div.pagination {
+    margin: 40px auto 0;
+    width: 80%;
+    height: 40px;
+    background: transparent;
+    text-align: center;
+    display: none;
+    font-size: 30px;
+}
+
+main .pagination .pagination-left,
+main .pagination .pagination-right {
+    width: 40px;
+    height: 40px;
+    color: #666;
+    border: 1px solid lightgray;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
+    font-size: 20px;
+}
+
+main .pagination .pagination-left:hover {
+    background-color: orange;
+    color: white;
+}
+
+main .pagination .pagination-right:hover {
+    background-color: rgb(122, 202, 37);
+    color: white;
+}
+
+main .pagination .pagination-left:disabled,
+main .pagination .pagination-right:disabled  {
+    color: lightgray;
+}
+
+main .pagination .pagination-left:disabled:hover,
+main .pagination .pagination-right:disabled:hover {
+    background-color: transparent;
+}
+
+main div.pagination .page-number {
+    margin: 0 10px;
+    font-size: 20px;
+    vertical-align: middle;
+}  
+
+div.pagination .go-to {
+    display: inline;
+    margin-left: 30px;
+    font-size: 16px;
+    font-style: italic;
+}
+
+div.pagination .go-to input[type=number] {
+    width: 70px;
+    height: 40px;
+    vertical-align: 2px;
+    border: solid 1px #ccc;
+    padding: 5px 10px;
+    font-size: 14px;
+    -moz-appearance:textfield;
+}
+
+div.pagination .go-to button.go {
+    height: 40px;
+    padding: 10px 25px;
+    background-color: orange;
+    border: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease;
+    vertical-align: 1px;
+}
+
+div.pagination .go-to button.go:hover {
+    opacity: .8;
+}
